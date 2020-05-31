@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+   <!-- The datasource is bound into JNDI at this location. We reference 
+      this in META-INF/persistence.xml -->
+    <datasource jndi-name="java:/jdbc/aulasges_ee_ds" pool-name="mysql_aulasges_ee_ds_Pool" enabled="true" use-java-context="true">
+        <connection-url>jdbc:mysql://put_here_database_link</connection-url>
+        <driver>aulasges-ear-1.0.ear_com.mysql.jdbc.Driver_5_1</driver>
+        <pool>
+            <min-pool-size>5</min-pool-size>
+            <max-pool-size>15</max-pool-size>
+        </pool>
+        <security>
+            <user-name>put_usernmae</user-name>
+            <password>put_password</password>
+        </security>
+        <statement>
+            <prepared-statement-cache-size>100</prepared-statement-cache-size>
+            <share-prepared-statements/>
+        </statement>
+    </datasource>
+</datasources>
